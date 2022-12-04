@@ -1,0 +1,138 @@
+:root{
+--border-inactive-input:2px solid #00000038;
+--border-active-input:2px solid var(--primary-color-mono-2);
+--border-success-input:2px solid var(--indicator-color-positive);
+--border-unsuccessful-input:2px solid var(--indicator-color-negative);
+}
+
+/* hide arrows
+ Chrome, Safari, Edge, Opera */
+ input::-webkit-outer-spin-button,
+ input::-webkit-inner-spin-button {
+   -webkit-appearance: none !important;
+   margin: 0 !important;
+ }
+ 
+ /* Firefox */
+ input[type=number] {
+   -moz-appearance: textfield !important;
+ }
+input::-webkit-input-placeholder{
+font:var(--font-top-label);
+padding: var(--label-padding);
+}
+input::-ms-input-placeholder{
+font:var(--font-top-label);
+padding: var(--label-padding);
+}
+input:-ms-input-placeholder{
+font:var(--font-top-label);
+padding: var(--label-padding);
+}
+input:-webkit-autofill{
+font:var(--font-top-label);
+padding: var(--label-padding);
+}
+input,button,a{
+    pointer-events: all;
+    background: aliceblue;
+}
+input,button{
+cursor: pointer;
+transition: var(--transition-navigation);
+-webkit-tap-highlight-color: transparent;
+max-width:100%;
+}
+.input-container {
+position: relative;
+z-index: 11;
+margin: 10px auto;
+display: flex;
+max-width: 100%;
+pointer-events: none;
+}
+input:hover{
+    background-color: var(--spectacular-orange-hover);
+}
+.input-container[disabled=true]{
+display: none;
+}
+.input-slot {
+z-index: 1;
+margin: auto;
+pointer-events: none;
+display: flex;
+justify-content: center;
+}
+section button{
+  background: var(--border-color);
+}
+.input-slot input{
+  background-color: var(--border-color);
+}
+.input-rect-input{
+width: 100%;
+height: 100%;
+border-radius: 4px;
+outline: none;
+border:none;
+font:var(--font-placeholder);
+padding: var(--label-padding);
+font:var(--font-heading);
+color: black;
+}
+ .input-rect-input.white{
+  color: white;
+}
+.input-rect-input:focus-within,
+.input-rect-input:focus-visible
+{
+outline: var(--border-active-input);
+}
+.input-rect-input:focus-within ~ .top-label-slot,
+.input-rect-input:focus-visible ~ .top-label-slot
+{
+visibility: visible;
+}
+.input-rect-input[isinputok=true]{
+outline: var(--border-success-input);
+}
+.input-rect-input[isinputok=false]{
+outline: var(--border-unsuccessful-input);
+}
+.input-dialog{
+z-index: 11;
+font:var(--font-top-label);
+white-space: nowrap;
+background: white;
+position: absolute;
+bottom: 0;
+left: 50px;
+padding: var(--label-padding);
+visibility: hidden;
+}
+.input-dialog.visible{
+visibility: visible;
+color:var(--indicator-color-negative)
+}
+input[type="checkbox"],
+input[type="radio"]{
+width: 37px;
+height: 26px;
+position: absolute;
+appearance: none;  
+}
+input[type="checkbox"]:checked ~ svg #checkbox-button{
+transform: translate(3px);
+}
+input[type="checkbox"]:checked ~ svg #checkbox-button #checkbox-thumb{
+fill: var(--indicator-color-positive);
+}
+input[type="checkbox"]:checked ~ svg #checkbox-track{
+fill:var(--indicator-color-positive-light)
+}
+input[type="checkbox"]:hover ~ svg #checkbox-button #checkbox-thumb-hover,
+input[type="checkbox"]:active ~ svg #checkbox-button #checkbox-thumb-hover
+{
+animation: var(--animation-navigation);
+}

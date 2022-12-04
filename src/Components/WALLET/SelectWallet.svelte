@@ -17,10 +17,10 @@ const setVal = (val) =>{
 </script>
 {#if popup}
     <div id="select-wallet" style="width:{dim}px;height:{dim}px;top:{topBarHeight}px;display:{popup?"flex":"none"}">
-        <button on:click={() => {setVal("ALGO")}}>
+        <!-- <button on:click={() => {setVal("ALGO")}}>
             <AlgoButton></AlgoButton>
             <p>ALGO</p>
-        </button>
+        </button> -->
         <button on:click={() => {setVal("ETH")}}>
             <EthButton></EthButton>
             <p>ETH</p>

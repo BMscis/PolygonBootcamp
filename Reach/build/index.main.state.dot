@@ -1,0 +1,16 @@
+// This file is in the DOT file format. Upload or copy it into a Graphviz engine, such as https://dreampuf.github.io/GraphvizOnline
+digraph {
+"loop2"[label="{loop2|Auctioneer|nftId|value|highestBidder|isFirstBid|lastPrice|thisConsensusTime|lastConsensusTime}",shape="record"]
+"state0"[shape="point"]
+"state1"[label="{state1|Auctioneer|nftId|minBid|lenInBlocks|thisConsensusTime|v228:Bytes...}",shape="record"]
+"state3"[shape="point"]
+"state4"[shape="point"]
+"state5"[label="{state5|Auctioneer|nftId|value|highestBidder|isFirstBid|lastPrice|thisConsensusTime}",shape="record"]
+"loop2"->"state3"[label=""]
+"loop2"->"state4"[label=""]
+"loop2"->"state5"[label=""]
+"state0"->"state1"[label="p0(nftId, minBid, lenInBlocks)"]
+"state1"->"loop2"[label="p1()"]
+"state5"->"loop2"[label="p3(.fork76.msg)"]
+"state5"->"loop2"[label="p4()"]
+}
